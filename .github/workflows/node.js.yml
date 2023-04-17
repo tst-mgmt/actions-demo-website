@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "final/usingnodeJsTemplate" ]
+    branches: [ "final/usingNodeJsTemplate" ]
   pull_request:
-    branches: [ "final/usingnodeJsTemplate" ]
+    branches: [ "final/usingNodeJsTemplate" ]
   workflow_dispatch:
 
 jobs:
