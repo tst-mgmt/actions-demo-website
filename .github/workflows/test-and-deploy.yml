@@ -1,7 +1,7 @@
 name: test and deploy project
 on:
   push:
-    branches: ["final/usingCustomWorkflow"]
+    branches: ["finalVersion"]
   workflow_dispatch:
 jobs:
   compile-and-test:
