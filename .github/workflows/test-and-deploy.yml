@@ -10,9 +10,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: install node dependencies
-        run: npm run ci
+        run: npm ci
       - name: run tests
-        run: npm run test
+        run: npm test
       # - name: Test Report
       #   uses: dorny/test-reporter@v1
       #   if: success() || failure() # run this step even if previous step failed
@@ -32,7 +32,7 @@ jobs:
           git config --global user.name "andmill"
           git remote set-url origin https://andmill:${{ secrets.GITHUB_TOKEN }}@github.com/tst-mgmt/actions-demo-website
       - name: install node dependencies
-        run: npm run ci
+        run: npm ci
       - name: build
         run: npm run build
       - name: deploy to github pages
