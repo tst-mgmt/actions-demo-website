@@ -1,5 +1,6 @@
 {
   "name": "actions-demo-website",
+  "homepage": "http://tst-mgmt.github.io/actions-demo-website/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,6 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
