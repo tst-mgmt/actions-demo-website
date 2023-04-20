@@ -7,12 +7,12 @@ jobs:
   compile-and-test:
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v3
       - name: install node dependencies
-        run: npm ci
+        run: npm run ci
       - name: run tests
-        run: npm test
+        run: npm run test
       # - name: Test Report
       #   uses: dorny/test-reporter@v1
       #   if: success() || failure() # run this step even if previous step failed
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-22.04
     needs: compile-and-test
     steps:
-      - name: Checkout
+      - name: checkout
         uses: actions/checkout@v3
       - name: setup git authentication 
         run: |
@@ -32,8 +32,8 @@ jobs:
           git config --global user.name "andmill"
           git remote set-url origin https://andmill:${{ secrets.GITHUB_TOKEN }}@github.com/tst-mgmt/actions-demo-website
       - name: install node dependencies
-        run: npm ci
+        run: npm run ci
       - name: build
-        run: npm build
+        run: npm run build
       - name: deploy to github pages
-        run: npm deploy
+        run: npm run deploy
