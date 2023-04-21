@@ -1,17 +1,21 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('page heading exists', () => {
-  render(<App />);
-  const heading = screen.getByText(/test management/i);
-  expect(heading).toBeInTheDocument();
-  expect(heading).toHaveTextContent('Test Management Systems');
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<App />, div);
 });
 
-test('page text exists', () => {
+it('renders heading', () => {
   render(<App />);
-  const mainImage = screen.getByAltText(/logo/);
-  expect(mainImage).toBeInTheDocument();
+  expect(screen.getByText('Test Management Systems')).toBeInTheDocument();
+});
+
+it('renders sub heading', () => {
+  render(<App />);
+  expect(screen.getByText('Demo Website for GitHub Actions')).toBeInTheDocument();
 });
 
 test('renders learn react link', () => {
@@ -19,3 +23,4 @@ test('renders learn react link', () => {
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
